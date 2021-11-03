@@ -25,6 +25,7 @@ class User:
         self.name = name
         self.email = email
         self.account = BankAccount(int_rate = .025, balance = 0)
+        User.population += 1
     def make_deposit(self, amount):
         self.account.deposit(amount)
         return self
@@ -52,3 +53,4 @@ chris.make_deposit(1000).make_deposit(1000).make_deposit(1000).make_withdrawal(1
 #print(bankAccount_B.display_account_info)
 
 chris.display_user_balance()
+print(User.population)
